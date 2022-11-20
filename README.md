@@ -1,4 +1,4 @@
-# Financial-Analysis-in-Py
+# Direction in 2-Risky-Assets—Portfolio
 This is a kind of practice notebook for my Security-Investment course in 22fall.
 Our dear professor Dr.Wang asked us to do a group project in Excel. I thought it was too basic so I tried to finish it by Python.(But for my homework's sake, I had to submit our project in an Excel file,LOL）
 Data are from yahoo finance, which cannot be access within Mainland China, so I used proxy to access the website. And this caused some proxy problem in using web crawling in python
