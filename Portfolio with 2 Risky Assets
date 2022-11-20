@@ -1,17 +1,17 @@
-#导入文档--------------------------------------
+#导入文档(import libraries and data)--------------------------------------
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
 data1=pd.read_csv("C:\\Users\Celeste\Desktop\AMZN.csv")
 data2=pd.read_csv("C:\\Users\Celeste\Desktop\WMT.csv")
-#取close price数据进行分析----------------------
+#取close price数据进行分析(take close price to analyze)----------------------
 AM=data1.iloc[:,5]
 WMT=data2.iloc[:,5]
-#计算每日收益率---------------------------------
+#计算每日收益率(calculate daily return)---------------------------------
 DrA=AM.pct_change(1).dropna()#Daily return of AMZN
 DrW=WMT.pct_change(1).dropna()#Daily return of WMT
-#计算每日收益率均值、方差、标准差及协方差---------
+#计算每日收益率均值、方差、标准差及相关系数(calculate daily return's expectation/variance/standard deviation and correlation)---------
 #Sample mean
 SMA=np.mean(DrA)
 SMW=np.mean(DrW)
@@ -22,7 +22,7 @@ SVW=np.var(DrW)
 SDA=np.std(DrA)
 SDW=np.std(DrW)
 #Sample Correlation
-SC=stats.pearsonr(DrA,DrW)#输出值第一个为相关系数，第二个为自由度，直接得出；或使用np.corrcoef得出相关系数矩阵，那么下面使用时标明行列
+SC=stats.pearsonr(DrA,DrW)#(corr,degrees fo freedom)；或使用np.corrcoef得出相关系数矩阵(Or use np.corrcoef)
 
 #不同权重下组合每日收益率(Daily return of the portfolio)-----------------
 DrP=[]
@@ -43,7 +43,7 @@ for n in range(0,100):
     AdP.append(SdP[n]*250)
     n+=1
 
-#数据可视化(散点图）
+#数据可视化(visualize data)
 plt.scatter(x=SdP,y=DrP)
 plt.title('Portfolio Return and Standard Deviation(Daily)')
 plt.scatter(x=AdP,y=ArP)
