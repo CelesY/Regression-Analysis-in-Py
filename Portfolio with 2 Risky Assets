@@ -1,49 +1,53 @@
-#导入文档(import libraries and data)--------------------------------------
+#import libraries and data--------------------------------------
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
 data1=pd.read_csv("C:\\Users\Celeste\Desktop\AMZN.csv")
 data2=pd.read_csv("C:\\Users\Celeste\Desktop\WMT.csv")
-#取close price数据进行分析(take close price to analyze)----------------------
+#take close price to analyze------------------------------------
 AM=data1.iloc[:,5]
 WMT=data2.iloc[:,5]
-#计算每日收益率(calculate daily return)---------------------------------
-DrA=AM.pct_change(1).dropna()#Daily return of AMZN
-DrW=WMT.pct_change(1).dropna()#Daily return of WMT
-#计算每日收益率均值、方差、标准差及相关系数(calculate daily return's expectation/variance/standard deviation and correlation)---------
+#calculate daily return---------------------------------
+DrA=AM.pct_change(1).dropna()       #Daily return of AMZN
+DrW=WMT.pct_change(1).dropna()      #Daily return of WMT
+#calculate daily return's expectation/variance/standard deviation and correlation---------
+
 #Sample mean
 SMA=np.mean(DrA)
 SMW=np.mean(DrW)
+
 #Sample variance
 SVA=np.var(DrA)
 SVW=np.var(DrW)
+
 #Sample std
 SDA=np.std(DrA)
 SDW=np.std(DrW)
-#Sample Correlation
-SC=stats.pearsonr(DrA,DrW)#(corr,degrees fo freedom)；或使用np.corrcoef得出相关系数矩阵(Or use np.corrcoef)
 
-#不同权重下组合每日收益率(Daily return of the portfolio)-----------------
+#Sample Correlation
+SC=stats.pearsonr(DrA,DrW)#(corr,degrees fo freedom)；Or use np.corrcoef
+
+#Daily return of the portfolio in different weights-----------------
 DrP=[]
 SdP=[]
 for i in range(1,101):
     w=0.01*i
     DrP.append(w*SMA+(1-w)*SMW)
-#同理得每日收益率方差(Portfolio Standard Deviation (Daily))
+#Portfolio Standard Deviation (Daily)
     SdP.append(np.sqrt(pow(w,2)*SVA+pow(1-w,2)*SVW+2*SC[0]*SVA*SVW*SDA*SDW))
     i+=1
     
-#计算不同权重下组合年收益率(Portfolio Return (Annual))-------------------
+#Portfolio Return (Annual)in different weights-------------------
 ArP=[]
 AdP=[]
 for n in range(0,100):
     ArP.append(DrP[n]*250)
-#同理得年收益率方差(Portfolio Standard Deviation (Annual))---------------
+#Portfolio Standard Deviation (Annual)---------------
     AdP.append(SdP[n]*250)
     n+=1
 
-#数据可视化(visualize data)
+#visualize the data
 plt.scatter(x=SdP,y=DrP)
 plt.title('Portfolio Return and Standard Deviation(Daily)')
 plt.scatter(x=AdP,y=ArP)
