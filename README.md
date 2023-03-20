@@ -1,7 +1,7 @@
 # Direction in 2-Risky-Assets-Portfolio
-Data are from yahoo finance, It's an open resource so that everyone can access the data for free. I got these data from the "Historical Data" Column(CSV file, as can be seen in the code).
+The data comes from yahoo finance, which is an open source, so everyone can access the data for free. I got this data from the "Historical Data" column (CSV file, as shown in the code). 
 
-The data contains 5 years' stock close price(not adjusted) of 2 famous companies: Walmart and Amazon. There might be some more efficient ways of cleaning and using these data, but I'm still learning about them. And this repository will keep updating and will be extended to N risky assets in the future.
+The data contains 5 years of closing stock prices (unadjusted) for Walmart and Amazon, two well-known companies. There might be some more efficient ways to clean and use this data, but I'm still learning them. And this repository will be continuously updated, and will be expanded to N risky assets in the future.
 
 Calculations are based on Portfolio Theory, formula are as follows:
 ## For Individual Asset:
