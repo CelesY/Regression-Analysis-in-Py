@@ -34,4 +34,4 @@ After listing each possible different weight on assets, we can create an efficie
     Because the returns for the risk-free asset are certain,Rf-E(Rf)=0:
           cov(Rf,Rm)=0
         
-Then we can get Tangency/Market Portfolio as well as CML,CAL, which I'll try to realize in later update.
+Then we can get Tangency/Market Portfolio as well as CML & CAL, which I'll try to realize in a later update.
