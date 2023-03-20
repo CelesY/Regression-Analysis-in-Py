@@ -3,16 +3,19 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
+
 data1=pd.read_csv("C:\\Users\Celeste\Desktop\AMZN.csv")
 data2=pd.read_csv("C:\\Users\Celeste\Desktop\WMT.csv")
+
 #take close price to analyze------------------------------------
 AM=data1.iloc[:,5]
 WMT=data2.iloc[:,5]
+
 #calculate daily return---------------------------------
 DrA=AM.pct_change(1).dropna()       #Daily return of AMZN
 DrW=WMT.pct_change(1).dropna()      #Daily return of WMT
-#calculate daily return's expectation/variance/standard deviation and correlation---------
 
+#calculate daily return's expectation/variance/standard deviation and correlation---------
 #Sample mean
 SMA=np.mean(DrA)
 SMW=np.mean(DrW)
@@ -34,6 +37,7 @@ SdP=[]
 for i in range(1,101):
     w=0.01*i
     DrP.append(w*SMA+(1-w)*SMW)
+
 #Portfolio Standard Deviation (Daily)
     SdP.append(np.sqrt(pow(w,2)*SVA+pow(1-w,2)*SVW+2*SC[0]*SVA*SVW*SDA*SDW))
     i+=1
