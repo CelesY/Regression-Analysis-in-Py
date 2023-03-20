@@ -25,7 +25,7 @@ Calculations are based on Portfolio Theory, formula are as follows:
    2. All co-variance are the same;
    3. All securities are equally weighted in the portfolio.
    
-After listing each possible different weight on assets, we can create an efficient frontier.
+After listing each possible weight on assets, we can create an efficient frontier.
 
 ## When Adding Risk-free Asset into the Portfolio:
           E(Rport)=w(rf)*E(Rf)+(1-w(rf))*E(Rm)
