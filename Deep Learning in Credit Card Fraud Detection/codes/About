@@ -1,0 +1,5 @@
+#About KNN-SMOTE-LSTM
+Inspired by Kaggle. Using SMOTE method to make training unbalanced data easier.
+Data was too big to upload, but anyone who needs this data can find it on Kaggle by searching 'Creditcard Fraud Detect' or keywords like that.
+
+Also, this is a project from my "Neural Network and Deep Learning" unit. Some bugs may arise because of dimensional problem.
