@@ -1,4 +1,4 @@
-# Direction in 2-Risky-Assets-Portfolio
+# About 2-Risky-Assets-Portfolio
 The data comes from yahoo finance, which is an open source, so everyone can access the data for free. I got this data from the "Historical Data" column (CSV file, as shown in the code). 
 
 The data contains 5 years of closing stock prices (unadjusted) for Walmart and Amazon, two well-known companies. There might be some more efficient ways to clean and use this data, but I'm still learning them. And this repository will be continuously updated, and will be expanded to N risky assets in the future.
