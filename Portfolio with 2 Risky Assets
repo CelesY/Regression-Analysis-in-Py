@@ -4,8 +4,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
 
-data1=pd.read_csv("C:\\Users\Celeste\Desktop\AMZN.csv")
-data2=pd.read_csv("C:\\Users\Celeste\Desktop\WMT.csv")
+data1=pd.read_csv("AMZN.csv")
+data2=pd.read_csv("WMT.csv")
 
 #take close price to analyze------------------------------------
 AM=data1.iloc[:,5]
